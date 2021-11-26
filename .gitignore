@@ -1,0 +1,4 @@
+.vscode
+AFLplusplus
+fuzz/output
+fuzz/binary*
