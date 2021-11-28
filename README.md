@@ -1,4 +1,4 @@
-# Mediatek Fuzzing Workshop
+# MediaTek Fuzzing Workshop
 ## Building a secure world
 Slide: [speakerdeck.com/yuawn/mediatek-fuzzing-workshop](https://speakerdeck.com/yuawn/mediatek-fuzzing-workshop)
 
