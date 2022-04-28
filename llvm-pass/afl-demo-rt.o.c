@@ -35,11 +35,9 @@
   #include "snapshot-inl.h"
 #endif
 
-
-u32 size = 0;
-u32 count = 0;
+u32    size = 0;
+u32    count = 0;
 char **addrs = 0;
-
 
 void __demo_func() {
 
@@ -47,46 +45,44 @@ void __demo_func() {
 
 }
 
-
 void __demo_record_input(char *addr) {
 
   if (!count) {
 
     size = 1;
     count = 1;
-    addrs = malloc(size * sizeof(char*));
+    addrs = malloc(size * sizeof(char *));
     addrs[0] = addr;
     return;
 
   }
 
-  for (u32 i = 0 ; i < count ; ++i)
-    if (addr == addrs[i])
-      return;
+  for (u32 i = 0; i < count; ++i)
+    if (addr == addrs[i]) return;
 
   addrs[count++] = addr;
 
   if (count == size) {
 
     size *= 2;
-    addrs = realloc(addrs, size * sizeof(char*));
+    addrs = realloc(addrs, size * sizeof(char *));
 
   }
 
 }
 
-
 void __demo_check_fmt(char *fmt) {
 
-  for (int i = 0 ; i < count ; ++i) {
+  for (int i = 0; i < count; ++i) {
 
     if (strstr(addrs[i], fmt)) {
 
       fprintf(stderr, "Format string: \"%s\" found in input data!\n", fmt);
-      strtok("QAQ", "A");
+      abort();
 
     }
 
   }
 
 }
+

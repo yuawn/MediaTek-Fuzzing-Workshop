@@ -25,7 +25,7 @@ void BUG2() {
 void BUG3() {
 
     puts("Reach bug3");
-    int n = read(0, input, MAX);
+    int n = read(0, input, 10);
     input[n - 1] = '\0';
     printf(input);
 
